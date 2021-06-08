@@ -41,34 +41,34 @@ class _MyAppState extends State<MyApp> {
       brightness: Brightness.dark,
       primarySwatch: Colors.blueGrey,
       accentColor: Colors.blueGrey,
-      backgroundColor: AppColors.primaryColor,
-      scaffoldBackgroundColor: AppColors.primaryColor,
+      backgroundColor: AppColors.appPrimaryColor,
+      scaffoldBackgroundColor: Colors.white,
       fontFamily: Strings.FONT_FAMILY,
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ButtonStyle(
-          padding: MaterialStateProperty.all<EdgeInsetsGeometry>(NumberConstants.buttonPadding),
-          backgroundColor: MaterialStateProperty.all<Color>(AppColors.darkPrimaryColor),
-          shape: MaterialStateProperty.all<OutlinedBorder>(RoundedRectangleBorder(borderRadius: BorderRadius.circular(NumberConstants.buttonRounding))),
-          elevation: MaterialStateProperty.all<double>(NumberConstants.buttonElevation),
+          padding: MaterialStateProperty.all<EdgeInsetsGeometry>(Numbers.buttonPadding),
+          backgroundColor: MaterialStateProperty.all<Color>(AppColors.orange),
+          shape: MaterialStateProperty.all<OutlinedBorder>(RoundedRectangleBorder(borderRadius: BorderRadius.circular(Numbers.buttonRounding))),
+          elevation: MaterialStateProperty.all<double>(Numbers.buttonElevation),
         ),
       ),
-      inputDecorationTheme: InputDecorationTheme(
-        filled: true,
-        fillColor: AppColors.darkPrimaryColor,
-        contentPadding: NumberConstants.inputPadding,
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(NumberConstants.inputRounding)),
-          borderSide: BorderSide.none,
-        ),
-        disabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(NumberConstants.inputRounding)),
-          borderSide: BorderSide.none,
-        ),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(NumberConstants.inputRounding)),
-          borderSide: BorderSide.none,
-        ),
-      ),
+      // inputDecorationTheme: InputDecorationTheme(
+      //   filled: true,
+      //   fillColor: AppColors.darkPrimaryColor,
+      //   contentPadding: NumberConstants.inputPadding,
+      //   enabledBorder: OutlineInputBorder(
+      //     borderRadius: BorderRadius.all(Radius.circular(NumberConstants.inputRounding)),
+      //     borderSide: BorderSide.none,
+      //   ),
+      //   disabledBorder: OutlineInputBorder(
+      //     borderRadius: BorderRadius.all(Radius.circular(NumberConstants.inputRounding)),
+      //     borderSide: BorderSide.none,
+      //   ),
+      //   border: OutlineInputBorder(
+      //     borderRadius: BorderRadius.all(Radius.circular(NumberConstants.inputRounding)),
+      //     borderSide: BorderSide.none,
+      //   ),
+      // ),
       textTheme: TextTheme(),
     );
   }

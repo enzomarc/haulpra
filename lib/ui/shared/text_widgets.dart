@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Bold32White extends Text {
-  Bold32White(String data, {
+class Bold48White extends Text {
+  Bold48White(String data, {
     StrutStyle? strutStyle,
     TextAlign? textAlign,
     TextDirection? textDirection,
@@ -24,14 +24,14 @@ class Bold32White extends Text {
     semanticsLabel: semanticsLabel,
     style: TextStyle(
       color: Colors.white,
-      fontSize: 32,
+      fontSize: 48,
       fontWeight: FontWeight.bold,
     ),
   );
 }
 
-class Regular32White extends Text {
-  Regular32White(String data, {
+class Regular48White extends Text {
+  Regular48White(String data, {
     StrutStyle? strutStyle,
     TextAlign? textAlign,
     TextDirection? textDirection,
@@ -54,7 +54,7 @@ class Regular32White extends Text {
     semanticsLabel: semanticsLabel,
     style: TextStyle(
       color: Colors.white,
-      fontSize: 32,
+      fontSize: 48,
       fontWeight: FontWeight.normal,
     ),
   );

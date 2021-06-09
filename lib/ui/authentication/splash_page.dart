@@ -10,13 +10,18 @@ class SplashPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.blue,
       body: SafeArea(
-        child: Center(
-          child: Row(
-            children: [
-              Logo(),
-              Regular32White(Strings.HAUL),
-              Bold32White(Strings.PRA),
-            ],
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Center(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Logo(),
+                SizedBox(width: 8.0),
+                Regular48White(Strings.HAUL),
+                Bold48White(Strings.PRA),
+              ],
+            ),
           ),
         ),
       ),

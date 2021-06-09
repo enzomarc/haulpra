@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'constants/constants.dart';
 import 'data/global_storage/global_storage.dart';
+import 'ui/authentication/authentication.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -32,7 +33,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       navigatorKey: GlobalStorage.navigatorKey,
       theme: _getThemeData(),
-      home: Text("Hello"),
+      home: SplashPage(),
     );
   }
 

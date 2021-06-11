@@ -1,9 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:haul_pra/constants/constants.dart';
+import 'package:haul_pra/helpers/navigation_helper.dart';
+import 'package:haul_pra/ui/authentication/authentication.dart';
 import 'package:haul_pra/ui/shared/shared.dart';
 
-class SplashPage extends StatelessWidget {
-  const SplashPage({Key? key}) : super(key: key);
+class SplashPage extends StatefulWidget {
+  @override
+  _SplashPageState createState() => _SplashPageState();
+}
+
+class _SplashPageState extends State<SplashPage> {
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(Duration(seconds: 2), () {
+      AppNavigator.changeScreen(WelcomePage());
+    });
+  }
 
   @override
   Widget build(BuildContext context) {

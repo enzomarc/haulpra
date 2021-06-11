@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:haul_pra/constants/constants.dart';
-import 'package:haul_pra/ui/shared/project_name.dart';
+import 'package:haul_pra/helpers/helpers.dart';
+import 'package:haul_pra/ui/authentication/authentication.dart';
 import 'package:haul_pra/ui/shared/shared.dart';
 
 class WelcomePageStructure extends StatelessWidget {
@@ -45,6 +46,6 @@ class WelcomePageStructure extends StatelessWidget {
   }
   
   _onSkipButtonPressed() {
-    print("Hello from page $pageIndex");
+    AppNavigator.changeScreen(RegistrationSelectionPage());
   }
 }

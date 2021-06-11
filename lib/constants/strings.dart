@@ -9,4 +9,11 @@ class Strings {
   static const String PAGE2 = "Start looking for service that matches your need by providing details oof your vehicle";
   static const String PAGE3 = "Now take advantage of the different services we offer you and enjoy a smarter search";
   static const String SKIP = "Skip";
+
+  // Registration Login
+  static const String SELECT_ROLE = "IN WHAT ROLE DO YOU WANT TO CONTINUE";
+  static const String CLIENT = "Client";
+  static const String SERVICE_PROVIDER = "Service Provider";
+  static const String GET_STARTED = "Get Started";
+
 }

@@ -18,8 +18,7 @@ class SplashPage extends StatelessWidget {
               children: [
                 Logo(),
                 SizedBox(width: 8.0),
-                Regular42White(Strings.HAUL),
-                Bold42White(Strings.PRA),
+                ProjectName(42, Colors.white),
               ],
             ),
           ),

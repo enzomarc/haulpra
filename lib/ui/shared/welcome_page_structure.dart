@@ -22,12 +22,12 @@ class WelcomePageStructure extends StatelessWidget {
             children: [
               Spacer(flex: 2),
               ProjectName(32, Colors.black),
-              SizedBox(height: 24.0),
-              Image.asset(assetPath),
+              SizedBox(height: 20.0),
+              Image.asset(assetPath, height: 280.0),
               Regular18Black(text, textAlign: TextAlign.center),
               Spacer(flex: 1),
               Dots(3, pageIndex),
-              SizedBox(height: 12.0),
+              SizedBox(height: 10.0),
               RoundedCornerButton(
                 Strings.SKIP,
                 _onSkipButtonPressed,
@@ -37,7 +37,7 @@ class WelcomePageStructure extends StatelessWidget {
                 fontSize: 20.0,
                 padding: EdgeInsets.symmetric(horizontal: 56.0, vertical: 14.0),
               ),
-              SizedBox(height: 40.0),
+              SizedBox(height: 10.0),
             ],
           ),
         ),
@@ -46,6 +46,6 @@ class WelcomePageStructure extends StatelessWidget {
   }
   
   _onSkipButtonPressed() {
-    AppNavigator.changeScreen(RegistrationSelectionPage());
+    AppNavigator.changeScreen(LoginPage());
   }
 }

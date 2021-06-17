@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:haul_pra/constants/app_colors.dart';
+import 'package:haul_pra/helpers/helpers.dart';
+import 'package:haul_pra/ui/authentication/authentication.dart';
 
 class ToggleButton extends StatefulWidget {
   @override
@@ -81,7 +83,7 @@ class _ToggleButtonState extends State<ToggleButton> {
             ),
             InkWell(
               onTap: () {
-                print(">>>> Signup button pressed");
+                AppNavigator.changeScreen(RegistrationSelectionPage());
               },
               child: Align(
                 alignment: Alignment(1, 0),

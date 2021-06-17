@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:haul_pra/constants/constants.dart';
+import 'package:haul_pra/helpers/helpers.dart';
+import 'package:haul_pra/ui/authentication/registration_page.dart';
 import 'package:haul_pra/ui/shared/shared.dart';
 
 class RegistrationSelectionPage extends StatefulWidget {
@@ -127,6 +129,6 @@ class _RegistrationSelectionPageState extends State<RegistrationSelectionPage> {
   }
 
   _onGetStartedButtonPressed() {
-    print("Hello");
+    AppNavigator.changeScreen(RegistrationPage());
   }
 }

@@ -16,5 +16,7 @@ class Strings {
   static const String SERVICE_PROVIDER = "Service Provider";
   static const String GET_STARTED = "Get Started";
   static const String LOGIN_BUTTON = "Log In";
+  static const String NEXT_STEP = "Next Step";
   static const String OR = "OR";
+  static const String CLIENT_SIGN_UP = "Client Sign Up";
 }

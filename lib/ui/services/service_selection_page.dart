@@ -80,44 +80,44 @@ class _ServiceSelectionPageState extends State<ServiceSelectionPage> {
           true,
           _onServiceTap,
           FontAwesomeIcons.truckLoading,
-        )
-        ,IconButtonWithText(
+        ),
+        IconButtonWithText(
           "TRANSPORT",
           true,
           _onServiceTap,
           FontAwesomeIcons.busAlt,
-        )
-        ,IconButtonWithText(
+        ),
+        IconButtonWithText(
           "FLAT TIER",
           true,
           _onServiceTap,
           FontAwesomeIcons.truckMonster,
-        )
-        ,IconButtonWithText(
+        ),
+        IconButtonWithText(
           "GAS",
           true,
           _onServiceTap,
           FontAwesomeIcons.gasPump,
-        )
-        ,IconButtonWithText(
+        ),
+        IconButtonWithText(
           "LOCKOUT",
           true,
           _onServiceTap,
           FontAwesomeIcons.server,
-        )
-        ,IconButtonWithText(
+        ),
+        IconButtonWithText(
           "JUMP START",
           true,
           _onServiceTap,
           FontAwesomeIcons.chargingStation,
-        )
-        ,IconButtonWithText(
+        ),
+        IconButtonWithText(
           "CAR WASH",
           true,
           _onServiceTap,
           FontAwesomeIcons.carCrash,
-        )
-        ,IconButtonWithText(
+        ),
+        IconButtonWithText(
           "OIL CHANGE",
           true,
           _onServiceTap,

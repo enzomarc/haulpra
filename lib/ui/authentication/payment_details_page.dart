@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:haul_pra/constants/asset_constants.dart';
+import 'package:haul_pra/constants/constants.dart';
 import 'package:haul_pra/helpers/helpers.dart';
 import 'package:haul_pra/ui/shared/shared.dart';
 
@@ -30,6 +31,11 @@ class _PaymentDetailsPageState extends State<PaymentDetailsPage> {
             _grayContainer(1.0),
             _cardRadioTile(AssetConstants.DISCOVER, 'XXXXXXXXXXXX0197'),
             _grayContainer(1.0),
+            Spacer(flex: 2),
+            _paymentButtons(),
+            Spacer(flex: 1),
+            _getSkipButton(),
+            SizedBox(height: 30.0),
           ],
         ),
       ),
@@ -38,13 +44,14 @@ class _PaymentDetailsPageState extends State<PaymentDetailsPage> {
 
   AppBar _getAppBar() {
     return AppBar(
+      centerTitle: true,
       backgroundColor: Colors.white,
       leading: IconButton(
         icon: Icon(Icons.arrow_back_ios, color: Colors.black),
         onPressed: () => AppNavigator.popScreen(),
       ),
       title: Text(
-        "HAULPRA PAYMENT DETAILS",
+        "PAYMENT DETAILS",
         style: TextStyle(
           color: Colors.black,
           fontWeight: FontWeight.w500,
@@ -110,5 +117,34 @@ class _PaymentDetailsPageState extends State<PaymentDetailsPage> {
       activeColor: Colors.blueAccent,
       selectedTileColor: Colors.grey,
     );
+  }
+
+  Widget _paymentButtons() {
+    return Container(
+      color: Colors.grey[300],
+      padding: EdgeInsets.all(16.0),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          RectangleButton("PAY", (){}, Colors.blueAccent, Colors.white),
+          SizedBox(height: 10.0),
+          RectangleButton("ADD PAYMENT METHOD", (){}, Colors.blueAccent, Colors.white)
+        ],
+      ),
+    );
+  }
+
+  RoundedCornerButton _getSkipButton() {
+    return RoundedCornerButton(
+      'Skip',
+      _onSkipButtonPressed,
+      AppColors.orange,
+      Colors.white,
+      padding: EdgeInsets.symmetric(horizontal: 64.0, vertical: 10.0),
+    );
+  }
+
+  _onSkipButtonPressed() {
+
   }
 }

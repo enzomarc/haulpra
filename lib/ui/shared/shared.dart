@@ -7,3 +7,4 @@ export 'rounded_corner_button.dart';
 export 'icon_button.dart';
 export 'toggle_button.dart';
 export 'rounded_input_field.dart';
+export 'rectangle_button.dart';

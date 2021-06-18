@@ -149,3 +149,33 @@ class Regular16Black extends Text {
     ),
   );
 }
+
+class Bold16Black extends Text {
+  Bold16Black(String data, {
+    StrutStyle? strutStyle,
+    TextAlign? textAlign,
+    TextDirection? textDirection,
+    Locale? locale,
+    bool? softWrap,
+    TextOverflow? overflow,
+    double? textScaleFactor,
+    int? maxLines,
+    String? semanticsLabel,
+  }) : super(
+    data,
+    strutStyle: strutStyle,
+    textAlign: textAlign,
+    textDirection: textDirection,
+    locale: locale,
+    softWrap: softWrap,
+    overflow: overflow,
+    textScaleFactor: textScaleFactor,
+    maxLines: maxLines,
+    semanticsLabel: semanticsLabel,
+    style: TextStyle(
+      color: Colors.black,
+      fontSize: 16,
+      fontWeight: FontWeight.bold,
+    ),
+  );
+}

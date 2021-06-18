@@ -45,6 +45,9 @@ class _MyAppState extends State<MyApp> {
       backgroundColor: AppColors.appPrimaryColor,
       scaffoldBackgroundColor: Colors.white,
       fontFamily: Strings.FONT_FAMILY,
+      radioTheme: RadioThemeData(
+        fillColor: MaterialStateProperty.all<Color>(Colors.grey),
+      ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ButtonStyle(
           padding: MaterialStateProperty.all<EdgeInsetsGeometry>(Numbers.buttonPadding),

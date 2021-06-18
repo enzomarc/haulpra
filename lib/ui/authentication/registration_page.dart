@@ -152,7 +152,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
   }
 
   _onRegistrationButtonPressed() {
-    AppNavigator.changeScreen(RegistrationSelectionPage());
+    AppNavigator.changeScreen(PaymentDetailsPage());
   }
 
   _googleCallback() {

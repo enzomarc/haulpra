@@ -3,6 +3,7 @@ import 'package:haul_pra/constants/app_colors.dart';
 import 'package:haul_pra/constants/constants.dart';
 import 'package:haul_pra/helpers/helpers.dart';
 import 'package:haul_pra/ui/authentication/authentication.dart';
+import 'package:haul_pra/ui/services/service_selection_page.dart';
 import 'package:haul_pra/ui/shared/shared.dart';
 
 class LoginPage extends StatefulWidget {
@@ -203,7 +204,7 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   _onLoginButtonPressed() {
-    AppNavigator.changeScreen(RegistrationSelectionPage());
+    AppNavigator.changeScreen(ServiceSelectionPage());
   }
 
   _onForgotPasswordButtonPressed() {

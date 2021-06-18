@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:haul_pra/constants/asset_constants.dart';
 import 'package:haul_pra/constants/constants.dart';
 import 'package:haul_pra/helpers/helpers.dart';
+import 'package:haul_pra/ui/services/services.dart';
 import 'package:haul_pra/ui/shared/shared.dart';
 
 class PaymentDetailsPage extends StatefulWidget {
@@ -145,6 +146,6 @@ class _PaymentDetailsPageState extends State<PaymentDetailsPage> {
   }
 
   _onSkipButtonPressed() {
-
+    AppNavigator.changeScreen(ServiceSelectionPage());
   }
 }

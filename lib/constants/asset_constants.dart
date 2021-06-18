@@ -9,4 +9,5 @@ class AssetConstants {
   static const String MASTERCARD = "assets/images/logo/mastercard.png";
   static const String VISA = "assets/images/logo/visa.jpeg";
   static const String DISCOVER = "assets/images/logo/discover.jpeg";
+  static const String MAPS = "assets/images/logo/maps.jpeg";
 }

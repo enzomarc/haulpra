@@ -74,6 +74,7 @@ class _ServiceSelectionPageState extends State<ServiceSelectionPage> {
       crossAxisCount: 2,
       mainAxisSpacing: 10.0,
       crossAxisSpacing: 24.0,
+      padding: EdgeInsets.all(20.0),
       children: [
         IconButtonWithText(
           "TOWING",

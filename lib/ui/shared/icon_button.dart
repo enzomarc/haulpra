@@ -7,13 +7,14 @@ class IconButtonWithText extends StatelessWidget {
   final IconData icon;
   final bool isSelected;
   final VoidCallback onPressed;
+  final Size size;
 
-  const IconButtonWithText(this.text, this.isSelected, this.onPressed, this.icon);
+  const IconButtonWithText(this.text, this.isSelected, this.onPressed, this.icon, {this.size = const Size(136, 136)});
 
   @override
   Widget build(BuildContext context) {
     return SizedBox.fromSize(
-      size: Size(136, 136), // button width and height
+      size: size, // button width and height
       child: ClipOval(
         child: Material(
           color: isSelected ? AppColors.orange : Colors.white, // button color

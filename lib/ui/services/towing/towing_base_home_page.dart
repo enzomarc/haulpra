@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:haul_pra/constants/constants.dart';
+import 'package:haul_pra/helpers/helpers.dart';
+import 'package:haul_pra/ui/services/towing/brand_selection_page.dart';
 import 'package:haul_pra/ui/shared/shared.dart';
 
 class TowingServiceHomePage extends StatefulWidget {
@@ -184,6 +186,6 @@ class _TowingServiceHomePageState extends State<TowingServiceHomePage> {
   }
 
   _onNextButtonPressed() {
-
+    AppNavigator.changeScreen(BrandSelectionPage());
   }
 }

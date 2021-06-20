@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:haul_pra/constants/asset_constants.dart';
+import 'package:haul_pra/helpers/helpers.dart';
+import 'package:haul_pra/ui/services/towing/towing_base_home_page.dart';
 import 'package:haul_pra/ui/shared/shared.dart';
 
 class ServiceSelectionPage extends StatefulWidget {
@@ -129,6 +131,6 @@ class _ServiceSelectionPageState extends State<ServiceSelectionPage> {
   }
 
   _onServiceTap() {
-    print("Tap");
+    AppNavigator.changeScreen(TowingServiceHomePage());
   }
 }

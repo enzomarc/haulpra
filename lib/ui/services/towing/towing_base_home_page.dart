@@ -37,13 +37,13 @@ class _TowingServiceHomePageState extends State<TowingServiceHomePage> {
           ),
         ),
       ),
-      bottomNavigationBar: _bottomModal(),
+      bottomSheet: _bottomModal(),
     );
   }
 
   Widget _bottomModal() {
     return Container(
-      color: Colors.transparent,
+      color: Colors.white,
       child: Container(
         padding: EdgeInsets.all(16.0),
         decoration: BoxDecoration(
@@ -57,25 +57,42 @@ class _TowingServiceHomePageState extends State<TowingServiceHomePage> {
           mainAxisSize: MainAxisSize.min,
           children: [
             _topRow(),
+            SizedBox(height: 12.0),
             _searchField(),
+            SizedBox(height: 12.0),
             _addressText(),
+            SizedBox(height: 20.0),
+            Container(height: 1.0, color: Colors.white, margin: EdgeInsets.symmetric(horizontal: 30.0),),
+            SizedBox(height: 20.0),
             _carRow(),
+            SizedBox(height: 20.0),
             _divider(),
-            RoundedCornerButton(
-              "Next",
-              _onNextButtonPressed,
-              AppColors.orange,
-              Colors.white,
-            ),
+            SizedBox(height: 20.0),
+            _nextButton(),
+            SizedBox(height: 20.0),
           ],
         ),
       ),
     );
   }
 
+  Container _nextButton() {
+    return Container(
+      width: double.infinity,
+      padding: EdgeInsets.symmetric(horizontal: 40.0),
+      child: RoundedCornerButton(
+        "Next",
+        _onNextButtonPressed,
+        AppColors.orange,
+        Colors.white,
+      ),
+    );
+  }
+
   Container _divider() {
     return Container(
-      height: 2.0,
+      margin: EdgeInsets.symmetric(horizontal: 36.0),
+      height: 5.0,
       decoration: BoxDecoration(
         color: AppColors.lightGrey,
         border: Border.all(color: Colors.black, width: 0.5),
@@ -84,14 +101,17 @@ class _TowingServiceHomePageState extends State<TowingServiceHomePage> {
     );
   }
 
-  Row _topRow() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Bold18Black("Where to?"),
-        Image.asset(AssetConstants.TOWING, height: 24.0),
-      ],
+  Widget _topRow() {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 16.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Bold18Black("Where to?"),
+          Image.asset(AssetConstants.TOWING, height: 32.0),
+        ],
+      ),
     );
   }
 
@@ -107,6 +127,7 @@ class _TowingServiceHomePageState extends State<TowingServiceHomePage> {
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 16,
+              color: Colors.black,
             ),
           ),
         ],
@@ -121,20 +142,20 @@ class _TowingServiceHomePageState extends State<TowingServiceHomePage> {
       decoration: InputDecoration(
         contentPadding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 6.0),
         border: OutlineInputBorder(
-          borderSide: BorderSide(color: AppColors.lightGrey, width: 2.0),
+          borderSide: BorderSide(color: Colors.black45, width: 2.0),
           borderRadius: BorderRadius.all(Radius.circular(24.0)),
         ),
         enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: AppColors.lightGrey, width: 2.0),
+          borderSide: BorderSide(color: Colors.black45, width: 2.0),
           borderRadius: BorderRadius.all(Radius.circular(24.0)),
         ),
         focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: AppColors.lightGrey, width: 2.0),
+          borderSide: BorderSide(color: Colors.black45, width: 2.0),
           borderRadius: BorderRadius.all(Radius.circular(24.0)),
         ),
         hintText: "Search Location",
         hintStyle: TextStyle(color: Colors.grey),
-        prefixIcon: Icon(Icons.location_on, color: Colors.black),
+        suffixIcon: Icon(Icons.location_on, color: Colors.black),
       ),
     );
   }
@@ -145,7 +166,7 @@ class _TowingServiceHomePageState extends State<TowingServiceHomePage> {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Bold16Black(text),
-        Image.asset(imagePath, height: 36.0),
+        Image.asset(imagePath, height: 50.0),
       ],
     );
   }

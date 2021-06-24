@@ -9,3 +9,4 @@ export 'toggle_button.dart';
 export 'rounded_input_field.dart';
 export 'rectangle_button.dart';
 export 'custom_bottom_rounded_clipper.dart';
+export 'outlined_divider.dart';

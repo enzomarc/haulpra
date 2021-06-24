@@ -75,7 +75,7 @@ class _TowingServiceHomePageState extends State<TowingServiceHomePage> {
             SizedBox(height: 20.0),
             _carRow(),
             SizedBox(height: 20.0),
-            _divider(),
+            OutlinedDivider(),
             SizedBox(height: 20.0),
             _nextButton(),
             SizedBox(height: 20.0),
@@ -94,18 +94,6 @@ class _TowingServiceHomePageState extends State<TowingServiceHomePage> {
         _onNextButtonPressed,
         AppColors.orange,
         Colors.white,
-      ),
-    );
-  }
-
-  Container _divider() {
-    return Container(
-      margin: EdgeInsets.symmetric(horizontal: 36.0),
-      height: 5.0,
-      decoration: BoxDecoration(
-        color: AppColors.lightGrey,
-        border: Border.all(color: Colors.black, width: 0.5),
-        borderRadius: BorderRadius.all(Radius.circular(2)),
       ),
     );
   }

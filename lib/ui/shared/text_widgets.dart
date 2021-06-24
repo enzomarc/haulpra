@@ -60,6 +60,36 @@ class Regular42White extends Text {
   );
 }
 
+class Medium24Black extends Text {
+  Medium24Black(String data, {
+    StrutStyle? strutStyle,
+    TextAlign? textAlign,
+    TextDirection? textDirection,
+    Locale? locale,
+    bool? softWrap,
+    TextOverflow? overflow,
+    double? textScaleFactor,
+    int? maxLines,
+    String? semanticsLabel,
+  }) : super(
+    data,
+    strutStyle: strutStyle,
+    textAlign: textAlign,
+    textDirection: textDirection,
+    locale: locale,
+    softWrap: softWrap,
+    overflow: overflow,
+    textScaleFactor: textScaleFactor,
+    maxLines: maxLines,
+    semanticsLabel: semanticsLabel,
+    style: TextStyle(
+      color: Colors.black,
+      fontSize: 24,
+      fontWeight: FontWeight.w500,
+    ),
+  );
+}
+
 class Medium24Gray extends Text {
   Medium24Gray(String data, {
     StrutStyle? strutStyle,

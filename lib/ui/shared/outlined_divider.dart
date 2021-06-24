@@ -2,13 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:haul_pra/constants/constants.dart';
 
 class OutlinedDivider extends StatelessWidget {
-  const OutlinedDivider({Key? key}) : super(key: key);
+  final double height;
+  final EdgeInsets margin;
+
+  const OutlinedDivider({
+    Key? key,
+    this.height=5.0,
+    this.margin=const EdgeInsets.symmetric(horizontal: 36.0),
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 36.0),
-      height: 5.0,
+      margin: margin,
+      height: height,
       decoration: BoxDecoration(
         color: AppColors.lightGrey,
         border: Border.all(color: Colors.black, width: 0.5),

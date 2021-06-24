@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:haul_pra/constants/constants.dart';
 import 'package:haul_pra/helpers/helpers.dart';
-import 'package:haul_pra/ui/services/towing/color_selection_page.dart';
 import 'package:haul_pra/ui/shared/shared.dart';
 
-class ModelSelectionPage extends StatelessWidget {
-  const ModelSelectionPage({Key? key}) : super(key: key);
+class ColorSelectionPage extends StatelessWidget {
+  const ColorSelectionPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -47,47 +46,57 @@ class ModelSelectionPage extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Bold18Black("SELECT MODEL"),
+            Medium24Black('1885'),
+            Medium24Black('1884'),
+            Medium24Black('1883'),
+            Medium24Black('1882'),
             SizedBox(height: 12.0),
-            Image.asset(AssetConstants.BMW, height: 50.0),
-            SizedBox(height: 12.0),
-            _imageGrid(),
+            OutlinedDivider(height: 3.0, margin: EdgeInsets.symmetric(horizontal: 10.0)),
+            SizedBox(height: 8.0),
+            _colorGrid(),
           ],
         ),
       ),
     );
   }
 
-  Widget _imageGrid() {
+  Widget _colorGrid() {
     return GridView.count(
-      crossAxisCount: 3,
+      crossAxisCount: 5,
       physics: NeverScrollableScrollPhysics(),
-      crossAxisSpacing: 6.0,
-      childAspectRatio: 1.5,
+      mainAxisSpacing: 12.0,
+      crossAxisSpacing: 12.0,
+      childAspectRatio: 1,
       shrinkWrap: true,
       children: [
-        _imageButton(AssetConstants.CAR),
-        _imageButton(AssetConstants.VAN),
-        _imageButton(AssetConstants.SUV),
-        _imageButton(AssetConstants.PICKUP),
-        _imageButton(AssetConstants.CAR),
-        _imageButton(AssetConstants.VAN),
-        _imageButton(AssetConstants.SUV),
-        _imageButton(AssetConstants.PICKUP),
-        _imageButton(AssetConstants.CAR),
-        _imageButton(AssetConstants.VAN),
-        _imageButton(AssetConstants.SUV),
-        _imageButton(AssetConstants.PICKUP),
+        _coloredCircleButton(Colors.red),
+        _coloredCircleButton(Colors.grey),
+        _coloredCircleButton(Colors.white),
+        _coloredCircleButton(Colors.green),
+        _coloredCircleButton(Colors.black),
+        _coloredCircleButton(Colors.blue),
+        _coloredCircleButton(Colors.blueGrey),
+        _coloredCircleButton(Colors.purple),
+        _coloredCircleButton(Colors.indigo),
+        _coloredCircleButton(Colors.lime),
       ],
     );
   }
 
-  Widget _imageButton(String imagePath) {
+  Widget _coloredCircleButton(Color color) {
     return InkWell(
       onTap: () {
         AppNavigator.changeScreen(ColorSelectionPage());
       },
-      child: Image.asset(imagePath, width: 46.0),
+      child: Container(
+        height: 26.0,
+        width: 26.0,
+        decoration: BoxDecoration(
+          color: color,
+          border: Border.all(color: color),
+          borderRadius: BorderRadius.all(Radius.circular(40)),
+        ),
+      ),
     );
   }
 }

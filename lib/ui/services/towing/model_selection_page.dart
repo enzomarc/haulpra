@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:haul_pra/constants/constants.dart';
 import 'package:haul_pra/helpers/helpers.dart';
-import 'package:haul_pra/ui/services/towing/color_selection_page.dart';
 import 'package:haul_pra/ui/shared/shared.dart';
+
+import 'color_selection_page.dart';
 
 class ModelSelectionPage extends StatelessWidget {
   const ModelSelectionPage({Key? key}) : super(key: key);

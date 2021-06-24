@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:haul_pra/constants/asset_constants.dart';
 import 'package:haul_pra/helpers/helpers.dart';
-import 'package:haul_pra/ui/services/towing/model_selection_page.dart';
+
+import 'model_selection_page.dart';
 
 class BrandSelectionPage extends StatelessWidget {
   const BrandSelectionPage({Key? key}) : super(key: key);

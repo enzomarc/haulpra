@@ -3,6 +3,8 @@ import 'package:haul_pra/constants/constants.dart';
 import 'package:haul_pra/helpers/helpers.dart';
 import 'package:haul_pra/ui/shared/shared.dart';
 
+import 'pickup_service_selection_page.dart';
+
 class ColorSelectionPage extends StatelessWidget {
   const ColorSelectionPage({Key? key}) : super(key: key);
 
@@ -86,17 +88,9 @@ class ColorSelectionPage extends StatelessWidget {
   Widget _coloredCircleButton(Color color) {
     return InkWell(
       onTap: () {
-        AppNavigator.changeScreen(ColorSelectionPage());
+        AppNavigator.changeScreen(PickupServiceSelectionPage());
       },
-      child: Container(
-        height: 26.0,
-        width: 26.0,
-        decoration: BoxDecoration(
-          color: color,
-          border: Border.all(color: color),
-          borderRadius: BorderRadius.all(Radius.circular(40)),
-        ),
-      ),
+      child: ColoredCircle(color: color),
     );
   }
 }

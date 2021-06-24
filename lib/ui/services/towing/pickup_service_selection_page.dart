@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:haul_pra/constants/constants.dart';
 import 'package:haul_pra/helpers/helpers.dart';
+import 'package:haul_pra/ui/services/services.dart';
 import 'package:haul_pra/ui/shared/shared.dart';
-
-import 'brand_selection_page.dart';
 
 class PickupServiceSelectionPage extends StatefulWidget {
   const PickupServiceSelectionPage({Key? key}) : super(key: key);
@@ -140,6 +139,6 @@ class _PickupServiceSelectionPageState extends State<PickupServiceSelectionPage>
   }
 
   _onNextButtonPressed() {
-    AppNavigator.changeScreen(BrandSelectionPage());
+    AppNavigator.changeScreen(ServiceProviderSelectionPage());
   }
 }

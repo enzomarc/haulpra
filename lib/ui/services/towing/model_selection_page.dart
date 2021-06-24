@@ -10,23 +10,30 @@ class ModelSelectionPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Container(
-          height: MediaQuery.of(context).size.height,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(AssetConstants.MAPS),
-              fit: BoxFit.cover,
+        child: Stack(
+          children: [
+            Container(
+              height: MediaQuery.of(context).size.height,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(AssetConstants.MAPS),
+                  fit: BoxFit.cover,
+                ),
+              ),
             ),
-          ),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: _bottomModal(),
+            ),
+          ],
         ),
       ),
-      bottomSheet: _bottomModal(),
     );
   }
 
   Widget _bottomModal() {
     return Container(
-      color: Colors.white,
+      color: Colors.transparent,
       child: Container(
         padding: EdgeInsets.all(16.0),
         decoration: BoxDecoration(

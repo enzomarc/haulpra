@@ -13,7 +13,8 @@ class PickupServiceSelectionPage extends StatefulWidget {
 }
 
 class _PickupServiceSelectionPageState extends State<PickupServiceSelectionPage> {
-  TextEditingController _searchController = TextEditingController();
+  TextEditingController _stateController = TextEditingController();
+  TextEditingController _licenseController = TextEditingController();
 
   @override
   void initState() {
@@ -22,7 +23,8 @@ class _PickupServiceSelectionPageState extends State<PickupServiceSelectionPage>
 
   @override
   void dispose() {
-    _searchController.dispose();
+    _stateController.dispose();
+    _licenseController.dispose();
     super.dispose();
   }
 
@@ -68,15 +70,15 @@ class _PickupServiceSelectionPageState extends State<PickupServiceSelectionPage>
           children: [
             _topRow(),
             SizedBox(height: 12.0),
-            _searchField(),
+            RoundedInputField(_stateController, "Select State", borderColor: Colors.black45),
             SizedBox(height: 12.0),
-            _addressText(),
-            SizedBox(height: 20.0),
-            Container(height: 1.0, color: Colors.white, margin: EdgeInsets.symmetric(horizontal: 30.0),),
-            SizedBox(height: 20.0),
-            _carRow(),
-            SizedBox(height: 20.0),
-            OutlinedDivider(),
+            RoundedInputField(_licenseController, "License Plate #", borderColor: Colors.black45),
+            SizedBox(height: 12.0),
+            Container(height: 1.0, color: Colors.black45, margin: EdgeInsets.symmetric(horizontal: 10.0)),
+            SizedBox(height: 12.0),
+            Bold18Black("Select Towing Type"),
+            SizedBox(height: 24.0),
+            _optionRow(),
             SizedBox(height: 20.0),
             _nextButton(),
             SizedBox(height: 20.0),
@@ -115,51 +117,6 @@ class _PickupServiceSelectionPageState extends State<PickupServiceSelectionPage>
     );
   }
 
-  RichText _addressText() {
-    return RichText(
-      text: TextSpan(
-        children: [
-          WidgetSpan(
-            child: Icon(Icons.location_on, color: Colors.black),
-          ),
-          TextSpan(
-            text: " 7658 Peter st Hollywood fl 33678",
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 16,
-              color: Colors.black,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _searchField() {
-    return TextField(
-      style: TextStyle(color: Colors.black),
-      controller: _searchController,
-      decoration: InputDecoration(
-        contentPadding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 6.0),
-        border: OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.black45, width: 2.0),
-          borderRadius: BorderRadius.all(Radius.circular(24.0)),
-        ),
-        enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.black45, width: 2.0),
-          borderRadius: BorderRadius.all(Radius.circular(24.0)),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.black45, width: 2.0),
-          borderRadius: BorderRadius.all(Radius.circular(24.0)),
-        ),
-        hintText: "Search Location",
-        hintStyle: TextStyle(color: Colors.grey),
-        suffixIcon: Icon(Icons.location_on, color: Colors.black),
-      ),
-    );
-  }
-
   Widget _imageWithText(String imagePath, String text) {
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -171,14 +128,13 @@ class _PickupServiceSelectionPageState extends State<PickupServiceSelectionPage>
     );
   }
 
-  Widget _carRow() {
+  Widget _optionRow() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        _imageWithText(AssetConstants.CAR, "CAR"),
-        _imageWithText(AssetConstants.SUV, "SUV"),
+        _imageWithText(AssetConstants.SUV, "FLATBED"),
         _imageWithText(AssetConstants.PICKUP, "PICKUP"),
-        _imageWithText(AssetConstants.VAN, "VAN"),
+        _imageWithText(AssetConstants.VAN, "HEAVY DUTY"),
       ],
     );
   }

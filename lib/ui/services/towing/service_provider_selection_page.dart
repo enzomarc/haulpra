@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:haul_pra/helpers/helpers.dart';
+import 'package:haul_pra/ui/services/towing/payment_page.dart';
 import 'package:haul_pra/ui/shared/shared.dart';
 
 class ServiceProviderSelectionPage extends StatelessWidget {
@@ -59,7 +60,7 @@ class ServiceProviderSelectionPage extends StatelessWidget {
 
   Widget _serviceProviderTile(String title, String subTitle, String price, double rating) {
     return InkWell(
-      onTap: () => print("Hello"),
+      onTap: () => AppNavigator.changeScreen(PaymentPage()),
       child: ListTile(
         tileColor: Colors.white,
         title: _getTitle(title, rating),

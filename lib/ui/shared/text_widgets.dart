@@ -120,6 +120,36 @@ class Medium24Gray extends Text {
   );
 }
 
+class Medium14Gray extends Text {
+  Medium14Gray(String data, {
+    StrutStyle? strutStyle,
+    TextAlign? textAlign,
+    TextDirection? textDirection,
+    Locale? locale,
+    bool? softWrap,
+    TextOverflow? overflow,
+    double? textScaleFactor,
+    int? maxLines,
+    String? semanticsLabel,
+  }) : super(
+    data,
+    strutStyle: strutStyle,
+    textAlign: textAlign,
+    textDirection: textDirection,
+    locale: locale,
+    softWrap: softWrap,
+    overflow: overflow,
+    textScaleFactor: textScaleFactor,
+    maxLines: maxLines,
+    semanticsLabel: semanticsLabel,
+    style: TextStyle(
+      color: Colors.grey[700],
+      fontSize: 14,
+      fontWeight: FontWeight.w500,
+    ),
+  );
+}
+
 class Regular18Black extends Text {
   Regular18Black(String data, {
     StrutStyle? strutStyle,
@@ -325,6 +355,36 @@ class Bold15Grey extends Text {
     style: TextStyle(
       color: Colors.grey[700],
       fontSize: 15,
+      fontWeight: FontWeight.bold,
+    ),
+  );
+}
+
+class Bold16Green extends Text {
+  Bold16Green(String data, {
+    StrutStyle? strutStyle,
+    TextAlign? textAlign,
+    TextDirection? textDirection,
+    Locale? locale,
+    bool? softWrap,
+    TextOverflow? overflow,
+    double? textScaleFactor,
+    int? maxLines,
+    String? semanticsLabel,
+  }) : super(
+    data,
+    strutStyle: strutStyle,
+    textAlign: textAlign,
+    textDirection: textDirection,
+    locale: locale,
+    softWrap: softWrap,
+    overflow: overflow,
+    textScaleFactor: textScaleFactor,
+    maxLines: maxLines,
+    semanticsLabel: semanticsLabel,
+    style: TextStyle(
+      color: Colors.green,
+      fontSize: 16,
       fontWeight: FontWeight.bold,
     ),
   );

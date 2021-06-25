@@ -77,6 +77,9 @@ class _HelpOnTheWayPageState extends State<HelpOnTheWayPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Bold16Green('ETA 17 min/2.09 miles'),
+                    SizedBox(height: 10.0),
+                    _details(),
+                    SizedBox(height: 10.0),
                     Bold16Green('Price: \$30.06'),
                   ],
                 ),
@@ -92,14 +95,43 @@ class _HelpOnTheWayPageState extends State<HelpOnTheWayPage> {
     );
   }
 
+  Row _details() {
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Bold16Black("Company"),
+            Bold16Black("Type"),
+            Bold16Black("Color"),
+            Bold16Black("Make"),
+          ],
+        ),
+        _divider(),
+        Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Bold16Black("Sam Towing"),
+            Bold16Black("Flatbed"),
+            Bold16Black("Red"),
+            Bold16Black("Ford"),
+          ],
+        ),
+      ],
+    );
+  }
+
   Column _imageRowWithRating() {
     return Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         CircleAvatar(
-          child: Icon(Icons.person, color: Colors.white, size: 90.0),
-          radius: 50.0,
+          child: Icon(Icons.person, color: Colors.white, size: 80.0),
+          radius: 40.0,
           backgroundColor: Colors.grey,
         ),
         Bold16Black("Peter"),
@@ -123,9 +155,10 @@ class _HelpOnTheWayPageState extends State<HelpOnTheWayPage> {
 
   Widget _divider() {
     return Container(
-      width: 1.0,
+      width: 1.5,
+      height: 90.0,
       color: Colors.black12,
-      margin: EdgeInsets.symmetric(horizontal: 8.0),
+      margin: EdgeInsets.symmetric(horizontal: 16.0),
     );
   }
 

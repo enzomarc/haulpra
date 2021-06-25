@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:haul_pra/constants/constants.dart';
 import 'package:haul_pra/helpers/helpers.dart';
+import 'package:haul_pra/ui/services/services.dart';
 import 'package:haul_pra/ui/shared/shared.dart';
 
-import 'brand_selection_page.dart';
 
 class PaymentPage extends StatefulWidget {
   const PaymentPage({Key? key}) : super(key: key);
@@ -169,7 +169,7 @@ class _PaymentPageState extends State<PaymentPage> {
       padding: EdgeInsets.symmetric(horizontal: 40.0),
       child: RoundedCornerButton(
         "Pay Now",
-        _onNextButtonPressed,
+        _onPayButtonPressed,
         AppColors.orange,
         Colors.white,
       ),
@@ -196,55 +196,7 @@ class _PaymentPageState extends State<PaymentPage> {
     );
   }
 
-  Widget _searchField() {
-    return TextField(
-      style: TextStyle(color: Colors.black),
-      controller: _searchController,
-      decoration: InputDecoration(
-        contentPadding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 6.0),
-        border: OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.black45, width: 2.0),
-          borderRadius: BorderRadius.all(Radius.circular(24.0)),
-        ),
-        enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.black45, width: 2.0),
-          borderRadius: BorderRadius.all(Radius.circular(24.0)),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.black45, width: 2.0),
-          borderRadius: BorderRadius.all(Radius.circular(24.0)),
-        ),
-        hintText: "Search Location",
-        hintStyle: TextStyle(color: Colors.grey),
-        suffixIcon: Icon(Icons.location_on, color: Colors.black),
-      ),
-    );
-  }
-
-  Widget _imageWithText(String imagePath, String text) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Bold16Black(text),
-        Image.asset(imagePath, height: 50.0),
-      ],
-    );
-  }
-
-  Widget _carRow() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        _imageWithText(AssetConstants.CAR, "CAR"),
-        _imageWithText(AssetConstants.SUV, "SUV"),
-        _imageWithText(AssetConstants.PICKUP, "PICKUP"),
-        _imageWithText(AssetConstants.VAN, "VAN"),
-      ],
-    );
-  }
-
-  _onNextButtonPressed() {
-    AppNavigator.changeScreen(BrandSelectionPage());
+  _onPayButtonPressed() {
+    AppNavigator.changeScreen(HelpOnTheWayPage());
   }
 }

@@ -5,3 +5,5 @@ export 'towing/model_selection_page.dart';
 export 'towing/towing_service_home_page.dart';
 export 'towing/pickup_service_selection_page.dart';
 export 'towing/service_provider_selection_page.dart';
+export 'towing/payment_page.dart';
+export 'towing/help_on_the_way_page.dart';

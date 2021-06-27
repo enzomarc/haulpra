@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:haul_pra/constants/constants.dart';
+import 'package:haul_pra/helpers/helpers.dart';
+import 'package:haul_pra/ui/services/services.dart';
 import 'package:haul_pra/ui/shared/shared.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
@@ -11,19 +13,6 @@ class RequestAcceptedPage extends StatefulWidget {
 }
 
 class _RequestAcceptedPageState extends State<RequestAcceptedPage> {
-  TextEditingController _searchController = TextEditingController();
-
-  @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    _searchController.dispose();
-    super.dispose();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -89,7 +78,7 @@ class _RequestAcceptedPageState extends State<RequestAcceptedPage> {
               ],
             ),
             SizedBox(height: 16.0),
-            _cancelButton(),
+            _buttonRow(),
             SizedBox(height: 16.0),
           ],
         ),
@@ -164,7 +153,7 @@ class _RequestAcceptedPageState extends State<RequestAcceptedPage> {
     );
   }
 
-  Widget _cancelButton() {
+  Widget _buttonRow() {
     return ThreeButtonRow(
       firstButtonColor: Colors.black,
       secondButtonColor: Colors.green,
@@ -172,35 +161,13 @@ class _RequestAcceptedPageState extends State<RequestAcceptedPage> {
       firstButtonText: 'Cancel',
       secondButtonText: 'Call',
       thirdButtonText: 'Message',
-      firstButtonCallback: (){print('1');},
-      secondButtonCallback: (){print('2');},
-      thirdButtonCallback: (){print('3');},
+      firstButtonCallback: _navigateToServiceArrivedPage,
+      secondButtonCallback: _navigateToServiceArrivedPage,
+      thirdButtonCallback: _navigateToServiceArrivedPage,
     );
   }
 
-  _onCancelButtonPressed() {
-    _showConfirmationDialog();
-  }
-
-  _showConfirmationDialog() {
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: Bold18White('Message!', textAlign: TextAlign.center),
-        content: Bold18White('Your provider has accepted your request and is now heading towards your location.'),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(40.0),
-        ),
-        backgroundColor: Color(0x60000000),
-        actionsPadding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width/2-90, vertical: 12.0),
-        actions: [
-          RoundedCornerButton('OK', _onOkPressed, AppColors.orange, Colors.white),
-        ],
-      ),
-    );
-  }
-
-  _onOkPressed() {
-    Navigator.of(context).pop();
+  _navigateToServiceArrivedPage() {
+    AppNavigator.changeScreen(ServiceArrivedPage());
   }
 }

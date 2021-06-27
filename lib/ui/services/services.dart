@@ -8,3 +8,4 @@ export 'towing/service_provider_selection_page.dart';
 export 'towing/payment_page.dart';
 export 'towing/help_on_the_way_page.dart';
 export 'towing/request_accepted_page.dart';
+export 'towing/service_arrived_page.dart';

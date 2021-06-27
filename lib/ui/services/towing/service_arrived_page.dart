@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:haul_pra/constants/constants.dart';
-import 'package:haul_pra/helpers/helpers.dart';
-import 'package:haul_pra/ui/services/towing/request_accepted_page.dart';
 import 'package:haul_pra/ui/shared/shared.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
-class HelpOnTheWayPage extends StatefulWidget {
-  const HelpOnTheWayPage({Key? key}) : super(key: key);
+class ServiceArrivedPage extends StatefulWidget {
+  const ServiceArrivedPage({Key? key}) : super(key: key);
 
   @override
-  _HelpOnTheWayPageState createState() => _HelpOnTheWayPageState();
+  _ServiceArrivedPageState createState() => _ServiceArrivedPageState();
 }
 
-class _HelpOnTheWayPageState extends State<HelpOnTheWayPage> {
+class _ServiceArrivedPageState extends State<ServiceArrivedPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -78,7 +76,7 @@ class _HelpOnTheWayPageState extends State<HelpOnTheWayPage> {
               ],
             ),
             SizedBox(height: 16.0),
-            _cancelButton(),
+            _buttonRow(),
             SizedBox(height: 16.0),
           ],
         ),
@@ -153,16 +151,14 @@ class _HelpOnTheWayPageState extends State<HelpOnTheWayPage> {
     );
   }
 
-  Container _cancelButton() {
-    return Container(
-      width: double.infinity,
-      padding: EdgeInsets.symmetric(horizontal: 10.0),
-      child: RoundedCornerButton(
-        "Cancel",
-        _onCancelButtonPressed,
-        Colors.black,
-        Colors.white,
-      ),
+  Widget _buttonRow() {
+    return TwoButtonRow(
+      firstButtonColor: Colors.green,
+      secondButtonColor: Colors.black,
+      firstButtonText: 'Call',
+      secondButtonText: 'Message',
+      firstButtonCallback: _onCancelButtonPressed,
+      secondButtonCallback: (){print('2');},
     );
   }
 
@@ -175,7 +171,7 @@ class _HelpOnTheWayPageState extends State<HelpOnTheWayPage> {
       context: context,
       builder: (context) => AlertDialog(
         title: Bold18White('Message!', textAlign: TextAlign.center),
-        content: Bold18White('Your provider has accepted your request and is now heading towards your location.'),
+        content: Bold18White('Your service provider has arrived at your location.'),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(40.0),
         ),
@@ -190,6 +186,5 @@ class _HelpOnTheWayPageState extends State<HelpOnTheWayPage> {
 
   _onOkPressed() {
     Navigator.of(context).pop();
-    AppNavigator.changeScreen(RequestAcceptedPage());
   }
 }

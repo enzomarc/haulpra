@@ -12,3 +12,4 @@ export 'custom_bottom_rounded_clipper.dart';
 export 'outlined_divider.dart';
 export 'colored_circle.dart';
 export 'three_button_row.dart';
+export 'two_button_row.dart';

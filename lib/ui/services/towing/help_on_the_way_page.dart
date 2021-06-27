@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:haul_pra/constants/constants.dart';
-import 'package:haul_pra/helpers/helpers.dart';
 import 'package:haul_pra/ui/shared/shared.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-
-import 'brand_selection_page.dart';
 
 class HelpOnTheWayPage extends StatefulWidget {
   const HelpOnTheWayPage({Key? key}) : super(key: key);
@@ -45,6 +42,11 @@ class _HelpOnTheWayPageState extends State<HelpOnTheWayPage> {
             Align(
               alignment: Alignment.bottomCenter,
               child: _bottomModal(),
+            ),
+            Positioned(
+              top: 50.0,
+              right: 10.0,
+              child: Bold22Black('2587'),
             ),
           ],
         ),
@@ -176,6 +178,28 @@ class _HelpOnTheWayPageState extends State<HelpOnTheWayPage> {
   }
 
   _onCancelButtonPressed() {
-    AppNavigator.changeScreen(BrandSelectionPage());
+    _showConfirmationDialog();
+  }
+
+  _showConfirmationDialog() {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Bold18White('Message!', textAlign: TextAlign.center),
+        content: Bold18White('Your provider has accepted your request and is now heading towards your location.'),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(40.0),
+        ),
+        backgroundColor: Color(0x60000000),
+        actionsPadding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width/2-90, vertical: 12.0),
+        actions: [
+          RoundedCornerButton('OK', _onOkPressed, AppColors.orange, Colors.white),
+        ],
+      ),
+    );
+  }
+
+  _onOkPressed() {
+    Navigator.of(context).pop();
   }
 }

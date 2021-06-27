@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:haul_pra/constants/constants.dart';
-import 'package:haul_pra/helpers/helpers.dart';
-import 'package:haul_pra/ui/services/towing/request_accepted_page.dart';
 import 'package:haul_pra/ui/shared/shared.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
-class HelpOnTheWayPage extends StatefulWidget {
-  const HelpOnTheWayPage({Key? key}) : super(key: key);
+class RequestAcceptedPage extends StatefulWidget {
+  const RequestAcceptedPage({Key? key}) : super(key: key);
 
   @override
-  _HelpOnTheWayPageState createState() => _HelpOnTheWayPageState();
+  _RequestAcceptedPageState createState() => _RequestAcceptedPageState();
 }
 
-class _HelpOnTheWayPageState extends State<HelpOnTheWayPage> {
+class _RequestAcceptedPageState extends State<RequestAcceptedPage> {
   TextEditingController _searchController = TextEditingController();
 
   @override
@@ -166,16 +164,17 @@ class _HelpOnTheWayPageState extends State<HelpOnTheWayPage> {
     );
   }
 
-  Container _cancelButton() {
-    return Container(
-      width: double.infinity,
-      padding: EdgeInsets.symmetric(horizontal: 10.0),
-      child: RoundedCornerButton(
-        "Cancel",
-        _onCancelButtonPressed,
-        Colors.black,
-        Colors.white,
-      ),
+  Widget _cancelButton() {
+    return ThreeButtonRow(
+      firstButtonColor: Colors.black,
+      secondButtonColor: Colors.green,
+      thirdButtonColor: AppColors.orange,
+      firstButtonText: 'Cancel',
+      secondButtonText: 'Call',
+      thirdButtonText: 'Message',
+      firstButtonCallback: (){print('1');},
+      secondButtonCallback: (){print('2');},
+      thirdButtonCallback: (){print('3');},
     );
   }
 
@@ -203,6 +202,5 @@ class _HelpOnTheWayPageState extends State<HelpOnTheWayPage> {
 
   _onOkPressed() {
     Navigator.of(context).pop();
-    AppNavigator.changeScreen(RequestAcceptedPage());
   }
 }

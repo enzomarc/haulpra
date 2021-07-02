@@ -182,7 +182,38 @@ class _TowingServiceHomePageRevisitState extends State<TowingServiceHomePageRevi
     );
   }
 
+  _showPickupOptionsDialog() {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Bold18Black('Select Option', textAlign: TextAlign.center),
+        content: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            InkWell(
+              onTap: () => AppNavigator.replaceScreen(ServiceProviderSelectionPage()),
+              child: _imageWithText(AssetConstants.SUV, "FLATBED"),
+            ),
+            InkWell(
+              onTap: () => AppNavigator.replaceScreen(ServiceProviderSelectionPage()),
+              child: _imageWithText(AssetConstants.PICKUP, "PICKUP"),
+            ),
+            InkWell(
+              onTap: () => AppNavigator.replaceScreen(ServiceProviderSelectionPage()),
+              child: _imageWithText(AssetConstants.VAN, "HEAVY DUTY"),
+            ),
+          ],
+        ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(40.0),
+        ),
+        backgroundColor: Colors.grey[200],
+        // backgroundColor: Color(0x60000000),
+      ),
+    );
+  }
+
   _onNextButtonPressed() {
-    AppNavigator.changeScreen(BrandSelectionPage());
+    _showPickupOptionsDialog();
   }
 }

@@ -169,20 +169,25 @@ class _CompleteJobPageState extends State<CompleteJobPage> {
       context: context,
       builder: (context) => AlertDialog(
         title: Bold18White('Message!', textAlign: TextAlign.center),
-        content: Bold18White('Your service provider has arrived at your location.'),
+        content: Bold18White('Are you sure you want to complete the job? Please make sure you are at the drop off location.'),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(40.0),
         ),
         backgroundColor: Color(0x60000000),
-        actionsPadding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width/2-90, vertical: 12.0),
+        // actionsPadding: EdgeInsets.symmetric(horizontal: 50, vertical: 12.0),
         actions: [
-          RoundedCornerButton('OK', _onOkPressed, AppColors.orange, Colors.white),
+          RoundedCornerButton('YES', _onYesPressed, Colors.green, Colors.white),
+          RoundedCornerButton('NO', _onNoPressed, Colors.red, Colors.white),
         ],
       ),
     );
   }
 
-  _onOkPressed() {
+  _onYesPressed() {
+    Navigator.of(context).pop();
+  }
+
+  _onNoPressed() {
     Navigator.of(context).pop();
   }
 }

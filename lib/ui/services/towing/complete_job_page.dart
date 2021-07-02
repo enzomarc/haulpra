@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:haul_pra/constants/constants.dart';
-import 'package:haul_pra/helpers/helpers.dart';
-import 'package:haul_pra/ui/services/towing/complete_job_page.dart';
 import 'package:haul_pra/ui/shared/shared.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
-class ServiceArrivedPage extends StatefulWidget {
-  const ServiceArrivedPage({Key? key}) : super(key: key);
+class CompleteJobPage extends StatefulWidget {
+  const CompleteJobPage({Key? key}) : super(key: key);
 
   @override
-  _ServiceArrivedPageState createState() => _ServiceArrivedPageState();
+  _CompleteJobPageState createState() => _CompleteJobPageState();
 }
 
-class _ServiceArrivedPageState extends State<ServiceArrivedPage> {
+class _CompleteJobPageState extends State<CompleteJobPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -78,7 +76,7 @@ class _ServiceArrivedPageState extends State<ServiceArrivedPage> {
               ],
             ),
             SizedBox(height: 16.0),
-            _buttonRow(),
+            _completeJobButton(),
             SizedBox(height: 16.0),
           ],
         ),
@@ -153,19 +151,17 @@ class _ServiceArrivedPageState extends State<ServiceArrivedPage> {
     );
   }
 
-  Widget _buttonRow() {
-    return TwoButtonRow(
-      firstButtonColor: Colors.green,
-      secondButtonColor: Colors.black,
-      firstButtonText: 'Call',
-      secondButtonText: 'Message',
-      firstButtonCallback: _onCancelButtonPressed,
-      secondButtonCallback: (){print('2');},
+  Widget _completeJobButton() {
+    return Container(
+      width: double.infinity,
+      padding: EdgeInsets.symmetric(horizontal: 40.0),
+      child: RoundedCornerButton(
+        "COMPLETE JOB",
+        _showConfirmationDialog,
+        Colors.green,
+        Colors.white,
+      ),
     );
-  }
-
-  _onCancelButtonPressed() {
-    _showConfirmationDialog();
   }
 
   _showConfirmationDialog() {
@@ -187,6 +183,6 @@ class _ServiceArrivedPageState extends State<ServiceArrivedPage> {
   }
 
   _onOkPressed() {
-    AppNavigator.replaceScreen(CompleteJobPage());
+    Navigator.of(context).pop();
   }
 }

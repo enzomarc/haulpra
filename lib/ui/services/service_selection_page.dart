@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:haul_pra/constants/constants.dart';
 import 'package:haul_pra/helpers/helpers.dart';
+import 'package:haul_pra/ui/services/towing/towing_service_home_page_revisit.dart';
 import 'package:haul_pra/ui/shared/shared.dart';
 
 import 'services.dart';
@@ -82,13 +83,13 @@ class _ServiceSelectionPageState extends State<ServiceSelectionPage> {
         IconButtonWithText(
           "TOWING",
           true,
-          _onServiceTap,
+          _onTowingServiceTap,
           FontAwesomeIcons.truckLoading,
         ),
         IconButtonWithText(
           "TRANSPORT",
           true,
-          _onServiceTap,
+          _onTowing2ServiceTap,
           FontAwesomeIcons.busAlt,
         ),
         IconButtonWithText(
@@ -129,6 +130,14 @@ class _ServiceSelectionPageState extends State<ServiceSelectionPage> {
         ),
       ],
     );
+  }
+
+  _onTowingServiceTap() {
+    AppNavigator.changeScreen(TowingServiceHomePage());
+  }
+
+  _onTowing2ServiceTap() {
+    AppNavigator.changeScreen(TowingServiceHomePageRevisit());
   }
 
   _onServiceTap() {

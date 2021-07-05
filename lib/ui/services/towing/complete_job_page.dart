@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:haul_pra/constants/constants.dart';
+import 'package:haul_pra/ui/services/service_selection_page.dart';
 import 'package:haul_pra/ui/shared/shared.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
@@ -184,7 +185,9 @@ class _CompleteJobPageState extends State<CompleteJobPage> {
   }
 
   _onYesPressed() {
-    Navigator.of(context).pop();
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(builder: (context) => ServiceSelectionPage())
+    );
   }
 
   _onNoPressed() {

@@ -6,6 +6,7 @@ import 'package:haul_pra/ui/services/towing/towing_service_home_page_revisit.dar
 import 'package:haul_pra/ui/shared/shared.dart';
 
 import 'services.dart';
+import 'tire/tire_home_page.dart';
 
 class ServiceSelectionPage extends StatefulWidget {
   const ServiceSelectionPage({Key? key}) : super(key: key);
@@ -141,6 +142,6 @@ class _ServiceSelectionPageState extends State<ServiceSelectionPage> {
   }
 
   _onServiceTap() {
-    AppNavigator.changeScreen(TowingServiceHomePage());
+    AppNavigator.changeScreen(TireHomePage());
   }
 }

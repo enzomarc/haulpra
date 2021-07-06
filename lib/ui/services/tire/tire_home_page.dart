@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:haul_pra/constants/constants.dart';
 import 'package:haul_pra/helpers/helpers.dart';
 import 'package:haul_pra/ui/services/services.dart';
+import 'package:haul_pra/ui/services/towing/towing_service_home_page_revisit.dart';
 import 'package:haul_pra/ui/shared/shared.dart';
-
-import '../towing/brand_selection_page.dart';
 
 class TireHomePage extends StatefulWidget {
   const TireHomePage({Key? key}) : super(key: key);
@@ -15,6 +14,8 @@ class TireHomePage extends StatefulWidget {
 
 class _TireHomePageState extends State<TireHomePage> {
   TextEditingController _searchController = TextEditingController();
+  int _selectedIndex = 0;
+  List<String> _options = ['I have a spare', 'I don\'t have a spare', 'I need a tow truck'];
 
   @override
   void initState() {
@@ -184,38 +185,54 @@ class _TireHomePageState extends State<TireHomePage> {
     );
   }
 
-  _showPickupOptionsDialog() {
+  _showOptionsDialog() {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Bold18Black('Select Option', textAlign: TextAlign.center),
-        content: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            InkWell(
-              onTap: () => AppNavigator.replaceScreen(ServiceProviderSelectionPage()),
-              child: _imageWithText(AssetConstants.SUV, "FLATBED"),
-            ),
-            InkWell(
-              onTap: () => AppNavigator.replaceScreen(ServiceProviderSelectionPage()),
-              child: _imageWithText(AssetConstants.PICKUP, "PICKUP"),
-            ),
-            InkWell(
-              onTap: () => AppNavigator.replaceScreen(ServiceProviderSelectionPage()),
-              child: _imageWithText(AssetConstants.VAN, "HEAVY DUTY"),
-            ),
-          ],
+        title: Align(
+          alignment: Alignment.centerRight,
+          child: Image.asset(AssetConstants.TIRE, height: 40.0),
         ),
+        content: StatefulBuilder(
+          builder: (BuildContext context, StateSetter setState) {
+            return Column(
+              mainAxisSize: MainAxisSize.min,
+              children: List<Widget>.generate(3, (int index) {
+                return RadioListTile(
+                  title: Bold18White(_options[index]),
+                  value: index,
+                  groupValue: _selectedIndex,
+                  onChanged: (int? value) {
+                    setState(() => _selectedIndex = value ?? 0);
+                    print(_selectedIndex);
+                  },
+                );
+              }),
+            );
+          },
+        ),
+        actionsPadding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width/2-90, vertical: 12.0),
+        actions: [
+          RoundedCornerButton('OK', _onOkPressed, Colors.green, Colors.white),
+        ],
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(40.0),
         ),
-        backgroundColor: Colors.grey[200],
+        backgroundColor: Color(0x60000000),
         // backgroundColor: Color(0x60000000),
       ),
     );
   }
 
   _onNextButtonPressed() {
-    _showPickupOptionsDialog();
+    _showOptionsDialog();
+  }
+
+  _onOkPressed() {
+    if (_selectedIndex == 2) {
+      AppNavigator.replaceScreen(TowingServiceHomePageRevisit());
+    } else {
+
+    }
   }
 }

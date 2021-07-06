@@ -19,4 +19,5 @@ class AssetConstants {
   static const String PICKUP = "assets/images/icons/pickup.png";
   static const String VAN = "assets/images/icons/van.png";
   static const String TIRE = "assets/images/icons/tire.png";
+  static const String TIRE_REPLACEMENT = "assets/images/icons/tire_replacement.png";
 }

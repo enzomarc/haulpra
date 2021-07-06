@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:haul_pra/constants/constants.dart';
 import 'package:haul_pra/helpers/helpers.dart';
 import 'package:haul_pra/ui/services/services.dart';
+import 'package:haul_pra/ui/services/tire/tire_replacement_page.dart';
 import 'package:haul_pra/ui/services/towing/towing_service_home_page_revisit.dart';
 import 'package:haul_pra/ui/shared/shared.dart';
 
@@ -230,9 +231,9 @@ class _TireHomePageState extends State<TireHomePage> {
 
   _onOkPressed() {
     if (_selectedIndex == 2) {
-      AppNavigator.replaceScreen(TowingServiceHomePageRevisit());
+      AppNavigator.changeScreen(TowingServiceHomePageRevisit());
     } else {
-
+      AppNavigator.changeScreen(TireReplacementPage());
     }
   }
 }
